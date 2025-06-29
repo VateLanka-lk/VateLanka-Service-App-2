@@ -9,6 +9,7 @@ import WelcomeScreen from "./components/Screens/WelcomeScreen";
 import DriverLoginScreen from "./components/Screens/DriverLoginScreen";
 
 import DriverHomeScreen from "./components/Screens/Driver/DriverHomeScreen";
+import DailyReport from './components/Screens/Driver/DailyReport';
 import MapViewScreen from "./components/Screens/Driver/MapViewScreen";
 import ConfirmStopScreen from "./components/Screens/Driver/ConfirmStopScreen";
 import AssignedTicketsScreen from "./components/Screens/Driver/AssignedTicketsScreen";
@@ -42,7 +43,9 @@ const DriverStack = ({ userProfile }) => (
       cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
     }}
   >
-    <Stack.Screen
+
+    
+   <Stack.Screen
       name="DriverHome"
       component={DriverHomeScreen}
       initialParams={{ profile: userProfile }}
@@ -66,6 +69,8 @@ const DriverStack = ({ userProfile }) => (
         cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
       }}
     />
+    {/* Add the DailyReport screen here */}
+    <Stack.Screen name="DailyReport" component={DailyReport} />
   </Stack.Navigator>
 );
 export default function App() {

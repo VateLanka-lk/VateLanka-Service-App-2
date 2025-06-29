@@ -628,7 +628,26 @@ export default function DriverHomeScreen({ route, navigation }) {
             </View>
           </TouchableOpacity>
         )}
+        
 
+/* Add this for Daily Report */
+<TouchableOpacity
+  style={styles.assignedTasksCard}
+  onPress={() => navigation.navigate("DailyReport")}
+>
+  <View style={styles.assignedTasksHeader}>
+    <Icon name="file-text" size={24} color={COLORS.white} />
+    <View style={styles.assignedTasksTextContainer}>
+      <CustomText style={styles.assignedTasksTitle}>
+        Daily Report
+      </CustomText>
+      <CustomText style={styles.assignedTasksSubtitle}>
+        Tap to submit your daily delivery report
+      </CustomText>
+    </View>
+  </View>
+</TouchableOpacity>
+        
         {currentLocation && isValidLocation(currentLocation) && (
           <View style={styles.mapPreviewContainer}>
             <View style={styles.mapThumbnail}>
